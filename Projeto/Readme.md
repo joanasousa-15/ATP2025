@@ -7,13 +7,13 @@ Algoritmos e Técnicas de Programação
 Projeto desenvolvido por: Catarina Peixoto, Joana Sousa, Mafalda Sequeira
 
 Docentes: José Carlos Ramalho e Luís Filipe Cunha
-___________________________________________
+_____________________________________________________________________________________________________________________________
 ## Objetivo do Projeto
 
-Este projeto consiste no desenvolvimento de uma aplicação em Python para simular o funcionamento de uma *clínica médica* com múltiplos agentes: pacientes, enfermeiros e médicos. A simulação é baseada em eventos discretos, com chegadas probabilísticas, triagem, filas com prioridade e atendimento por especialidade.
+Este projeto consiste no desenvolvimento de uma aplicação em Python para simular o funcionamento de uma **clínica médica** com múltiplos agentes: pacientes, enfermeiros e médicos. A simulação é baseada em eventos discretos, com chegadas probabilísticas, triagem, filas com prioridade e atendimento por especialidade.
 
 A aplicação inclui também uma interface gráfica (simpleGUI) com visualização de logs, estatísticas e gráficos.
-__________________________________________
+______________________________________________________________________________________________________________________________
 ## Setup
 ### Requisitos
 - Python
@@ -39,7 +39,7 @@ __________________________________________
 - clinic_alunos.py – código base fornecido pelos docentes.
 
 - Ficheiros Python desenvolvidos pelos autores (simulação completa + GUI).
-___________________________________________
+_____________________________________________________________________________________________________________________________
 ## Modelo de Simulação
 
 O funcionamento do simulador baseia-se em três fases principais: chegada, triagem e consulta. Todos os eventos são organizados numa fila cronológica que controla o fluxo da simulação.
@@ -74,7 +74,7 @@ Os médicos só atendem pacientes da sua especialidade e a seleção do próximo
 
 - Tempo de chegada
 
-_______
+_________________
 ## Funcionalidades 
 ### Simulação Clínica
 A aplicação executa automaticamente:
@@ -94,6 +94,8 @@ A interface gráfica apresenta vários elementos essenciais:
 - Gráfico da ocupação dos enfermeiros
 
 - Gráfico da ocupação dos médicos
+
+- Gráfico da fila média de espera em função da evolução da fila
   
 Estes gráficos são atualizados a cada simulação, com mecanismos que evitam sobreposição de figuras de execuções anteriores.
 
@@ -101,6 +103,12 @@ Estes gráficos são atualizados a cada simulação, com mecanismos que evitam s
 
 O separador de Logs apresenta um registo cronológico completo dos eventos: chegadas, início e fim de triagem, entrada em consulta e saída.
 Nas estatísticas, é possível visualizar:
+
+- tempo médio de espera
+- tempo médio de consulta
+- tempo média na clínica
+- tamanho da fila de espera (máximo e média)
+- quantidade de doentes atendidos
 - tempo total de ocupação de cada enfermeiro
 - ocupação de cada médico juntamente com a respetiva especialidade
 
@@ -110,7 +118,7 @@ Estas métricas permitem identificar gargalos e avaliar o dimensionamento dos re
 
 Os médicos têm especialidades distribuídas de forma probabilística, mas garantindo sempre que existe pelo menos um médico de cada área.
 Os enfermeiros são atribuídos com base num algoritmo que seleciona sempre o profissional com menor tempo acumulado de ocupação, evitando sobrecarga desigual.
-____________
+____________________________________
 ## Interface Gráfica
 Para tornar esta simulação acessível e visualmente intuitiva, foi desenvolvida uma interface gráfica utilizando simpleGUI. A interface permite configurar os seguintes parâmetros: 
 
@@ -128,11 +136,11 @@ Dispõe também de um mecanismo de Tabs com 3 separadores:
 - Gráficos – evolução das filas e ocupações ao longo do tempo
 
 Inclui ainda botões para Executar Simulação e Sair, com validações de input robustas (deteção de texto, decimais indevidos e mensagens de erro informativas).
-_________________________________________
+___________________________________________________________________________________________________________________________
 ## Exemplo de Simulação
 Numa execução típica, por exemplo, com 5 enfermeiros, 8 médicos, taxa de chegada de 10 pacientes por hora, triagem média de 5 minutos e consultas de 15 minutos distribuídas exponencialmente ao longo de 480 minutos, observou-se um comportamento harmonioso do sistema. As taxas de ocupação dos enfermeiros mostraram-se equilibradas, validando o algoritmo de distribuição de carga. As ocupações dos médicos foram mais variáveis, refletindo a desigual procura por especialidades, o que é coerente com o modelo probabilístico implementado. A fila de triagem manteve-se curta e estável, enquanto a fila dos médicos variou ao longo do tempo, atingindo picos e descendo progressivamente consoante os períodos de maior procura.
 
-__________________________________________
+__________________________________________________________________________________________________________________________
 ## Conclusão
 
 Este projeto permitiu consolidar competências importantes na área da modelação computacional, simulação de sistemas reais, estruturação de dados, programação probabilística e criação de interfaces gráficas interativas. Para além disso, proporcionou uma visão prática sobre como gerir recursos clínicos e como pequenas alterações nos parâmetros podem provocar mudanças significativas no comportamento global do sistema. O trabalho cumpriu todos os objetivos propostos e constitui uma base sólida para extensões futuras, como a introdução de novos tipos de recursos, melhorias no sistema de prioridades, integração com bases de dados ou aumento do realismo clínico do modelo.
